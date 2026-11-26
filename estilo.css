@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-fondo: #fbf7ed;    
+    --rojo-bauhaus: #da441c;
+    --azul-bauhaus: #1c65b5;
+    --amarillo-bauhaus: #eca01b;
+    --blanco: #f9f0e6;
+    --negro: #2b2b2b;
+}
+
+body.dark-mode {
+    --color-fondo: #121212;
+    --blanco: #1e1e1e;
+    --negro: #fbf7ed;
+    --rojo-bauhaus: #ff5c33;
+    --azul-bauhaus: #3385ff;
+}
+
+body {
+    font-family: "MuseoModerno", sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--negro);
+    min-height: 100vh;
+    padding: 4vw;
+    transition: background-color 0.4s ease, color 0.4s ease; 
+}
+
+.btn-interactivo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--rojo-bauhaus);
+    color: white;
+    border: 3px solid var(--negro);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 5px 5px 0px var(--negro);
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.btn-interactivo:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px var(--negro);
+    background-color: var(--azul-bauhaus);
+}
+
+.btn-interactivo:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0px 0px 0px var(--negro);
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.logo-bauhaus {
+    font-size: 7.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.1rem;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.logo-bauhaus .letra-b {
+    background: linear-gradient(90deg, var(--azul-bauhaus) 50%, var(--rojo-bauhaus) 50%);
+    -webkit-background-clip: text;
+    background-clip: text; 
+    -webkit-text-fill-color: transparent;
+}
+.logo-bauhaus .letra-a { color: var(--amarillo-bauhaus); font-weight: 300; }
+.logo-bauhaus .letra-u { color: var(--azul-bauhaus); }
+.logo-bauhaus .letra-h { color: var(--azul-bauhaus); }
+.logo-bauhaus .letra-a2 { color: var(--rojo-bauhaus); }
+.logo-bauhaus .letra-u2 { color: var(--azul-bauhaus); }
+.logo-bauhaus .letra-s { color: var(--amarillo-bauhaus); }
+
+.info-principal {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.imagen-contenedor-principal {
+    width: 100%;
+    max-width: 900px;
+    border: 3px solid var(--negro);
+}
+
+.imagen-contenedor-principal img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%); 
+}
+
+.grid-principal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.col-completa {
+    grid-column: span 2;
+}
+
+.card-introduccion, .card-seccion {
+    background-color: var(--blanco);
+    padding: 3rem;
+    border: 4px solid var(--negro);
+    box-shadow: 10px 10px 0px var(--negro); 
+    transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid var(--negro);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    transition: border-color 0.4s ease;
+}
+
+.card-introduccion h2 { color: var(--rojo-bauhaus); }
+.card-introduccion p { font-size: 1.3rem; line-height: 1.7; }
+
+.paleta-seccion h2 { color: var(--azul-bauhaus); }
+.paleta-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    margin-top: 1rem;
+}
+.color-bloque {
+    height: 100px;
+    border: 2px solid var(--negro);
+    border-radius: 15px; 
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.color-rojo { background-color: #da441c; color: #ffffff; }
+.color-amarillo { background-color: #eca01b; color: #2b2b2b; }
+.color-azul { background-color: #1c65b5; color: #ffffff; }
+.color-blanco { background-color: #ffffff; color: #2b2b2b; }
+.color-negro { background-color: #2b2b2b; color: #ffffff; }
+
+.fuente-seccion h2 { color: var(--negro); }
+.fuente-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.lista-caracteristicas {
+    list-style-type: none;
+    line-height: 1.6;
+}
+.lista-caracteristicas li::before {
+    content: "■ ";
+    color: var(--rojo-bauhaus);
+}
+.fuente-ejemplos p {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+.fuente-ejemplos span { font-weight: 300; font-size: 1.4rem; }
+.f-itc { font-family: 'MuseoModerno', sans-serif; font-weight: 700; }
+.f-modern { font-family: 'MuseoModerno', sans-serif; font-style: italic; }
+.f-futura { font-family: 'Arial', sans-serif; font-weight: bold; }
+
+.iconos-seccion h2 { color: var(--amarillo-bauhaus); }
+.iconos-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+}
+.iconos-texto ul { list-style: none; }
+.iconos-texto li { margin-bottom: 1.2rem; line-height: 1.6; }
+.iconos-texto strong { color: var(--azul-bauhaus); }
+.iconos-imagenes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.iconos-imagenes img {
+    width: 100%;
+    border: 2px solid var(--negro);
+    background-color: #eee; 
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.galeria-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid var(--negro);
+    transition: transform 0.3s ease;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.03) rotate(1deg);
+}
+
+@media (max-width: 900px) {
+    .logo-bauhaus { font-size: 4rem; }
+    .grid-principal { grid-template-columns: 1fr; }
+    .col-completa { grid-column: span 1; }
+    .iconos-grid { grid-template-columns: 1fr; }
+}
